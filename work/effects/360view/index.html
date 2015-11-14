@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>document</title>
+<style>
+body{height: 700px;background-color: #fff;}
+.wrapper{width: 800px;}
+#box{width:640px; height:378px; position:absolute; top:50%; left:50%; margin-top:-189px; margin-left:-320px;}
+#box a{height:100%; width:50%; position:absolute; top:0;}
+#left{left:0;}
+#right{right:0;}
+</style>
+<script>
+//左+
+//右-
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oImg = oBox.getElementsByTagName('img')[0];
+	var oLeft = document.getElementById('left');
+	var oRight = document.getElementById('right');
+	var timer = null;
+	var count = 0;
+	timer = setInterval(toRight,80)
+	function toLeft(){
+		count++;
+			if(count==77){
+				count=0;
+			}
+			oImg.src='img/'+count+'.jpg';
+	}
+	function toRight(){
+			count--;
+			if(count==-1){
+				count=76;
+			}
+			oImg.src='img/'+count+'.jpg';
+	}
+	oLeft.onmouseover=function(){
+		clearInterval(timer);
+		timer = setInterval(toLeft,50);
+	};
+	oRight.onmouseover=function(){
+		clearInterval(timer);
+		timer = setInterval(toRight,50);
+	};
+};
+</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="box">
+		<img src="img/0.jpg" />
+		<a href="javascript:;" id="left"></a>
+		<a href="javascript:;" id="right"></a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

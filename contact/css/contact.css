@@ -1,0 +1,134 @@
+.wrapper {
+  min-height: 100%;
+}
+#content {
+  margin-left: 220px;
+  height: 100%;
+}
+#content .cheers {
+  display: none;
+  width: 340px;
+  color: #575757;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 100;
+  font-size: 14px;
+}
+#content .cheers h2 {
+  font-size: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #B22512;
+}
+#content .cheers .thank-you {
+  padding: 20px 0;
+  color: #B22512;
+  font-size: 18px;
+  line-height: 1;
+}
+#content .cheers .send_time {
+  text-align: right;
+}
+#content .cheers p {
+  line-height: 1.6em;
+}
+#content .contact {
+  min-height: 100%;
+  width: 340px;
+  color: #575757;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 100;
+}
+#content .contact h2 {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+#content .contact p {
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+#content .contact p a {
+  color: #B22512;
+}
+#content .contact p .required {
+  color: #B22512;
+}
+#content .contact p label {
+  font-size: 20px;
+}
+#content .contact p input,
+#content .contact p textarea {
+  outline: none;
+  font-size: 18px;
+  font-family: 'Microsoft Yahei';
+  margin-top: 10px;
+}
+#content .contact p .text_input {
+  width: 100%;
+  height: 50px;
+  border: none 0;
+  border-radius: 20px 25px 25px 0;
+  background-color: #fff;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  transition: .8s;
+}
+#content .contact p textarea {
+  height: 220px!important;
+  box-sizing: border-box;
+  border-radius: 25px 25px 25px 0;
+  width: 100%;
+  resize: none;
+  border: none 0;
+  padding: 25px;
+}
+#content .contact p .send {
+  width: 180px;
+  border: none 0;
+  color: #fff;
+  background-color: #999;
+  float: right;
+  border-radius: 25px 25px 25px 0;
+  padding: 0 25px;
+  height: 50px;
+  line-height: 50px;
+  transition: .5s;
+  cursor: pointer;
+}
+#content .contact p .send:hover {
+  background-color: #B22512;
+}
+#content .contact .send-p {
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+.bg-fadein .bg-fadein-item {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: no-repeat 0 center;
+}
+.bg-fadein .bg-fadein-item.active {
+  display: block;
+}
+.bg-fadein .boat {
+  background-image: url(../../img/boat1200.png);
+}
+.bg-fadein .horse {
+  background-image: url(../../img/horse1200.png);
+}
+.bg-fadein .fan {
+  background-image: url(../../img/fan.png);
+}
+.bg-fadein .eminem {
+  background-image: url(../../img/eminem.png);
+}

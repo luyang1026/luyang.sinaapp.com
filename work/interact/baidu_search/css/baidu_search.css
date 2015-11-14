@@ -1,0 +1,57 @@
+.wrapper{
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 80px;
+	text-align: center;
+}
+body{
+	height: 600px;
+	background-color: #fff;
+}
+.box{
+	width: 640px;
+	margin: 0 auto;
+}
+img{
+	width: 270px;
+	height: 129px;
+}
+input.text{
+	width: 528px;
+	height: 18px;
+	border: 1px solid #ccc;
+	line-height: 20px;
+	font-size: 18px;
+	padding: 8px 5px;
+	vertical-align: middle;
+	outline-width: thin;
+}
+input.go{
+	width: 100px;
+	height: 36px;
+	cursor: pointer;
+	background-color: #3385ff;
+	color: #fff;
+	border: none;
+	text-align: center;
+	vertical-align: middle;
+}
+ul{
+	display: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-top: none;
+	width: 538px;
+	list-style-type: none;
+	text-align: left;
+	font-size: 16px;
+	line-height: 30px;
+}
+li{
+	height: 30px;
+	padding-left: 5px;
+}
+li.active{
+	background-color: #ccc;
+}

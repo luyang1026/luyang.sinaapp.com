@@ -1,0 +1,614 @@
+@color-top:#e0e6f1;
+@color-mainnav:#f8f8f8;
+/* 顶部 */
+.top-bg{
+	background: url(../img/top-bg.png) repeat-x;
+ 	.top{
+ 		height: 120px;
+ 		min-width: 1000px;
+ 	}
+ 	.logo{
+ 		background: url(../img/logo.png) no-repeat;
+ 		margin-top: 40px;
+ 		margin-right: 385px;
+ 		width: 185px;
+ 		height: 42px;
+ 	}
+ 	.membership{
+ 		margin-top: 54px;
+ 		.membership-login{
+			border-bottom: 1px solid @color-top;
+			color: @color-top;
+			margin-right: 11px;
+			padding-bottom: 4px;
+ 		}
+ 		.membership-register{
+			border-left: 1px solid @color-top;
+			padding: 0 12px;
+			color: @color-top;
+ 		}
+ 		.membership-center{
+			margin-right: 18px;
+			color: @color-top;
+ 		}
+ 	}
+ 	.weixin{
+ 		background: url(../img/weixin.png) no-repeat;
+ 		width: 23px;
+ 		height: 20px;
+ 		margin-top: 53px;
+ 		margin-right: 10px;	
+ 	}
+ 	.weibo{
+ 		background: url(../img/weibo.png) no-repeat;
+ 		width: 21px;
+ 		height: 17px;
+ 		margin-top: 55px;
+ 		margin-right: 12px;
+ 	}
+ 	.cart{
+ 		background: url(../img/cart.png) no-repeat;
+ 		width: 177px;
+ 		height: 33px;
+ 		margin-top: 44px;
+ 	}
+}
+ /* 导航 */
+.main-nav-bg{
+	background-color: #414141;
+	.main-nav-list{
+	 	font-size: 14px;
+		.main-nav-list-item{
+			float: left;
+			line-height: 40px;
+			width: 88px;
+			text-align: center;
+			position: relative;
+			.main-nav-list-item_link{
+				color: @color-mainnav;
+			}
+			.sub-nav-list2{
+				position: absolute;
+				background-color: #f6f6f6;
+				padding: 0 5px;
+				width: 78px;
+				top: 40px;
+				left: 0;	
+				line-height: 36px;
+				text-align: center;
+				display: none;
+				.sub-nav-list2-item{
+					border-bottom: 1px dashed #b0b1b2;
+					.sub-nav-list2-item_text{
+						color: #666;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+		.main-nav-list-item--first{
+			padding-left: 15px;
+			width: 185px;
+			text-align: left;
+			position: relative;
+			background-color: #343434;
+			cursor: pointer;
+			&:hover .main-nav-list-item-tri{
+					transform:rotatez(0);
+				}
+			.main-nav-list-item-tri{
+				position: absolute;
+				background: url(../img/main-nav-tri.png) no-repeat;
+				width: 10px;
+				height: 7px;
+				top: 18px;
+				left: 178px;
+				transition:0.3s;
+				transform: rotatez(90deg);
+			}
+			.sub-nav-list{
+				display: none;
+				position: absolute;
+				top: 40px;
+				left: 0;
+				background-color: #f8f9fa;
+				width: 176px;
+				border: 1px solid #e2e2e3;
+				border-bottom: none;
+				padding: 0 11px;
+				overflow: hidden;
+				.sub-nav-list-item{
+					padding: 5px 0;
+					border-bottom: 1px solid #dadad9;
+					.sub-nav-list-item_title{
+						color: #323232;
+						line-height: 33px;
+						font-weight: bold;
+					}
+					.sub-nav-list-item_text{
+						float: left;
+						font-size: 12px;
+						line-height: 22px;
+						margin-right: 25px;
+						color: #666;
+					}
+					.mr-20{
+						margin-right: -25px;
+					}
+				}
+				.clearbdb{
+					border-bottom: none;
+				}
+			}
+		}
+	}
+ }
+
+/* Banner */
+.banner{
+	height: 500px;
+	min-width: 1000px;
+	background: url(../img/banner.png) 0 center;
+	margin-bottom: 12px;
+}
+/* 新车品牌区 */
+.new-brand-section{
+	line-height: 54px;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 12px;
+}
+.brand-list-box{
+	.hover-box{
+		position: absolute;
+		z-index: 2;
+		width: 141px;
+		border: 1px solid #065eac;
+		height: 74px;
+		left: 0;
+		top: 0;
+		.tri-blue{
+			background: url(../img/brand-list--tri_blue.png) no-repeat;
+			position: absolute;
+			width: 15px;
+			height: 6px;
+			bottom: -7px;
+			left: 50%;
+			margin-left: -7px;
+		}
+	}
+	position: relative;
+}
+.brand-list{
+	border: 1px solid #e6e6e5;
+	width: 994px;
+	.brand-list-item{
+		float: left;
+		width: 141px;
+		height: 75px;
+		border-right: 1px solid #e6e6e5;
+		text-align: center;
+		line-height: 75px;
+		img{
+			vertical-align: middle;
+		}
+	}
+	.brand-list-item--last{
+		border-right: none;
+	}
+ }
+.brand-intro-list-box{
+	width: 994px;
+	height: 260px;
+	border: 1px solid #e6e6e5;
+	border-top: none;
+	position: relative;
+	overflow: hidden;
+}
+.brand-intro-list{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30000px;
+	.brand-intro-list-item{
+		float: left;
+		height: 260px;
+		text-align: center;
+		width: 249px;
+		line-height: 20px;
+		.brand-intro_title{
+			padding-left: 20px;
+			text-align: left;
+			margin: 8px 0;
+		}
+		.brand-intro_text{
+			text-align: left;
+			padding-left: 20px;
+			.origin{
+				text-decoration: line-through;
+				color: #c9c9c9;
+			}
+			.current{
+				color: #e01e27;
+				.large{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+/* 区标题 */
+.section-title{
+	height: 50px;
+	border-bottom: 1px solid #264a70;
+	margin-left: 3px;
+	margin-bottom: 13px;
+	h2{
+		float: left;
+		padding: 20px 0 0 15px;
+		font-size: 18px;
+		color: #323232;
+	}
+	a{
+		float: right;
+		margin: 30px 18px 0 0;
+		color: #777;
+		font-size: 12px;
+	}
+}
+.section-sm-title{
+	height: 52px;
+	line-height: 52px;
+	margin-left: 15px;
+	position: relative;
+	font-size: 18px;
+	color: #131313;
+	.double-line{
+		position: absolute;
+		height: 3px;
+		border-top: 1px dashed #dbdbdb;
+		border-bottom: 1px dashed #dbdbdb;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+	}
+}
+.mb18{
+	margin-bottom: 18px;
+}
+/* 精品商城 */
+.pro-list-item{
+		.pro-list-title{
+			line-height: 26px;
+			margin-top: 10px;
+			color: #434343;
+			border-bottom: 1px solid #c0bfbf;
+			margin-bottom: 9px;
+		}
+		.pro-list-text{
+			line-height: 24px;
+			color: #888;
+		}
+		.pro-list-price{
+			margin-top: 9px;
+			color: #f28e51;
+			font-size: 14px;
+			position: relative;
+			.pro-list-buy{
+				position: absolute;
+				top: -5px;
+				left: 128px;
+				background: url(../img/pro-list-buy.png) no-repeat;
+				width: 90px;
+				height: 26px;
+			}
+		}
+}
+/* 精品推荐 */
+// part2滑动门
+.pro-recom-part2{
+	position: relative;
+	.pro-recom-tab-list{
+		li{
+			height: 84px;
+			line-height: 84px;
+			border-bottom: 1px solid #e7e7e7;
+			text-align: center;
+			img{
+				vertical-align: middle;
+			}
+		}
+		.last{
+			border: none;
+		}
+	}
+	.pro-recom-tab-btns{
+		position: absolute;
+		cursor: pointer;
+		bottom: 20px;
+		left: 62px;		
+		li{
+			width: 6px;
+			height: 6px;
+			background-color: #b5b6b6;
+			margin-right: 5px;
+			float: left;
+		}
+		.last{
+			margin-right: none;
+		}
+		.current{
+			background-color: #be1f26;
+		}
+	}
+}
+.hide{
+	display: none;
+}
+// part4
+.pro-recom-part4{
+	.news{
+		font-size: 14px;
+		color: #565353;
+		float: left;
+		margin-top: 10px;
+	}
+	.more{
+		font-size: 12px;
+		margin-top: 12px;
+		float: right;
+		color: #757172;
+	}
+	.news-list-item{
+		line-height: 40px;
+		border-bottom: 1px solid #cacaca;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		a{
+			color: #909090;
+		}
+	}
+	.bottom-img{
+		display: block;
+		margin-top: 14px;
+	}
+}
+/* 积分商城 */
+.credit-shop-list-item{
+	.credit-shop-list-item-img{
+		display: block;
+		margin-bottom: 16px;
+	}
+	.credit-shop-list-item-text{
+		line-height: 27px;
+		color: #6b6b6b;
+		.grey-light{
+			color: #afaeae;
+		}
+		.red{
+			color: #c31f25;
+		}
+	}
+	.credit-shop-change{
+		display: inline-block;
+		background: url(../img/credit-shop-change.png) no-repeat;
+		width: 111px;
+		height: 35px;
+	}
+}
+/* 企业信息 */
+.enterprise-info{
+	.sub-title{
+		font-size: 14px;
+		color: #565353;
+		float: left;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.more{
+		font-size: 12px;
+		margin-top: 12px;
+		float: right;
+		color: #757172;
+	}
+	.news-list-item{
+		line-height: 40px;
+		border-bottom: 1px solid #cacaca;
+		padding-left: 26px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background: url(../img/enterprise-info-p1-icon.png) no-repeat 7px 12px;
+		a{
+			color: #909090;
+		}
+	}
+	.bottom-img{
+		display: block;
+	}
+}
+// part2
+.enterprise-info-part2{
+	overflow: hidden;
+	.enterprise-info-tools{
+		margin-right: -30px;
+		.enterprise-info-tools-item{
+			float: left;
+			width: 60px;
+			height: 87px;
+			margin-right: 20px;
+			margin-bottom: 15px;
+			.tools-text{
+				line-height: 27px;
+				text-align: center;
+			}
+		}
+		.clearmb{
+			margin-bottom: 0;
+		}
+	}
+}
+.q-and-a{
+	.q-and-a_item{
+		line-height: 30px;
+		a{
+			color: #90908f;
+		}
+	}
+}
+.enterprise-info-part3{
+	.p3-img-list{
+		.p3-img-list-item{
+			float: left;
+			margin: 8px 0 0 8px;
+		}
+	}
+}
+.mlr12{
+	margin: 0 12px;
+}
+/* 服务产业 */
+.serve-industry-title{
+	height: 41px;
+	border-bottom: 1px solid #ededed;
+	margin-bottom: 14px;
+	.sub-title{
+		float: left;
+		margin: 18px 0 0 13px;
+		font-size: 14px;
+		color: #b4b4b3;
+	}
+	.more{
+		margin: 18px 7px 0 0;
+		float: right;
+		color: #969695;
+	}
+}
+.serve-industry-list-item{
+	padding-left: 5px;
+	line-height: 40px;
+	border-bottom: 1px dashed #dbdbdb;
+	a{
+		color: #969695;
+	}
+}
+.serve-industry-part2-list{
+	margin-right: -30px;
+	.serve-industry-list-item{
+		float: left;
+		width: 170px;
+		margin-right: 30px;
+	}
+}
+.serve-industry-part3{
+	.p3-img{
+		float: left;
+		margin-right: 15px;
+	}
+	.serve-industry-part3-list{
+		margin-bottom: 22px;
+		.serve-industry-list-item{
+		width: 182px;
+		}
+	}
+	.contact{
+		height: 45px;
+		line-height: 45px;
+		padding-left: 54px;
+		font-size: 18px;
+		color: #4f3928;
+		background: url(../img/serve-industry-p3-phone.png) no-repeat;
+	}
+}
+ // 图片透明层 
+.img-opa-box(){
+		position: relative;
+		.container{
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			.opa{
+				width: 100%;
+				position: absolute;
+				background-color: #000;
+				opacity: 0.4;
+				z-index: -1;
+				height: 100%;
+				bottom: 0;
+				left: 0;
+			}
+			.text{
+				a{
+					color: #fff;
+				}
+			}
+		}
+}
+/* 百得利中心 */
+.better-life-center{
+	.center-list-item{
+		.center-list-item_title{
+			line-height: 42px;
+			color: #959595;
+			font-size: 14px;
+		}
+		.img-opa-box{
+			width: 210px;
+			height: 141px;
+			.img-opa-box;
+			.text{
+				line-height: 30px;
+				padding-left: 15px;
+			}
+		}
+		.center-list-item-sublist{
+			margin-top: 13px;
+			.center-list-item-sublist-item{
+				padding-left: 20px;
+				line-height: 25px;
+				background: url(../img/center-list-item-sub-list-icon.png) no-repeat 4px 12px;
+				a{
+					color: #a2a1a1;
+				}
+			}
+		}
+	}
+}
+.better-life-center{
+	.schedule{
+		position: relative;
+		width: 130px;
+		height: 235px;
+		background: url(../img/schedule-bg.png) no-repeat;
+		.brand-incoming{
+			padding: 45px 0 0 22px;
+			color: #323232;
+		}
+		.date{
+			position: absolute;
+			left: 13px;
+			background: url(../img/schedule-date-bg.png) no-repeat;
+			width: 94px;
+			height: 17px;
+			padding-left: 12px;
+			line-height: 17px;
+			color: #979797;
+		}
+		.date_1{
+			top: 19px;
+		}
+		.date_2{
+			top: 76px;
+		}
+		.date_3{
+			top: 133px;
+		}
+		.date_4{
+			top: 190px;
+		}
+	}
+}
+
