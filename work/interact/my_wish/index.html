@@ -1,0 +1,201 @@
+'<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>document</title>
+<link rel="stylesheet" href="./Css/index.css" />
+<script src="Js/ajax_main.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        var send = document.getElementById('send');
+        var form = document.getElementById('send-form');
+        var close = document.getElementById('close');
+        send.onclick = function(){
+            form.style.display = 'block';
+            form.style.left = (document.documentElement.clientWidth - form.offsetWidth)/2 + 'px';
+            form.style.zIndex = zIndex++;
+        };
+
+        close.onclick = function(){
+            form.style.display = 'none';
+        };
+
+        var username = document.getElementById('username');
+        var content = document.getElementById('content');
+        var sentButten = document.getElementById('send-btn');
+        var URL = 'wish.php';
+        var oMain = document.getElementById('main');
+        var zIndex = 100;
+        var phiz = document.getElementById('phiz');
+        var emoticons = phiz.getElementsByTagName('img')
+        //发表心愿
+        sentButten.onclick = function(){
+            ajax({
+                url:URL,
+                data:{
+                    act:'add',
+                    username:username.value,
+                    content:content.value
+                },
+                success:function(json){
+                    if(json.error)alert('发表心愿失败了');
+                    else{
+                        form.style.display = 'none';
+                        username.value = '';
+                        content.value = '';
+                        getAllWishes();
+                    }
+                }
+            });
+        };
+        //创建dl
+        function toDou(n){
+            return n<10?'0'+n:''+n;
+        }
+        function createMsg(id,username,content,time){
+            var oDate = new Date();
+            oDate.setTime(time*1000);
+            var stime = toDou(oDate.getHours())+':'+toDou(oDate.getMinutes());
+            var oDl = document.createElement('dl');
+            oDl.className = 'paper a' + (id%5+1);
+            oDl.innerHTML = "\
+                <dt>\
+                    <span class='username'>"+username+"</span>\
+                    <span class='num'>No."+id+"</span>\
+                </dt>\
+                <dd class='content'>"+str2face(content)+"</dd>\
+                <dd class='bottom'>\
+                    <span class='time'>今天"+stime+"</span>\
+                    <a href='javascript:;' class='close'></a>\
+                </dd>\
+            ";
+            var oA = oDl.getElementsByTagName('a')[0];
+            oA.onclick = function(){
+                var t = confirm('你确定要删除吗？');
+                if(t){
+                    ajax({
+                        url:URL,
+                        data:{
+                            act:'delete',
+                            id:id
+                        },
+                        success:function(json){
+                            if(!json.error)oMain.removeChild(oDl);
+                        }
+                    });
+                }
+            };
+            return oDl;
+        }
+        getAllWishes();
+        //获取所有心愿
+        function getAllWishes(){
+            ajax({
+                url:URL,
+                data:{
+                    act:'get'
+                },
+                success:function(str){
+                    str = str.replace(/<.+>/g,'');
+                    oMain.innerHTML = '';
+                    var json = eval('('+str+')');
+                    if(!json.error){
+                        var arr = json.msg;
+                        for (var i = 0; i < arr.length; i++) {
+                            var oDl = createMsg(arr[i].id,arr[i].username,arr[i].content,arr[i].time);
+                            oMain.appendChild(oDl);
+                            drag(oDl);
+                            rndPos(oDl);
+                        };
+                    }
+                }
+            });
+        }
+        //拖拽
+        function drag(obj){
+            obj.onmousedown = function(ev){
+                var oEvent = ev||event;
+                var disX = oEvent.clientX - obj.offsetLeft;
+                var disY = oEvent.clientY - obj.offsetTop;
+                obj.style.zIndex = zIndex++;
+                document.onmousemove = function(ev){
+                    var oEvent = ev||event;
+                    obj.style.left = oEvent.clientX - disX + 'px';
+                    obj.style.top = oEvent.clientY - disY + 'px';
+                };
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    obj.releaseCapture && obj.releaseCapture();
+                }
+                obj.setCapture && obj.setCapture();
+                return false;
+            };
+        }
+        //随机位置
+        function rndPos(obj){
+            obj.style.left = Math.random()*(document.documentElement.clientWidth-obj.offsetWidth) + 'px';
+            obj.style.top = Math.random()*(document.documentElement.clientHeight-140-obj.offsetHeight)
+        }
+        for (var i = 0; i < emoticons.length; i++) {
+            emoticons[i].onclick = function(){
+                content.value += '['+this.alt+']';
+            };
+        };
+        function str2face(str){
+            var arr=['[抓狂]','[抱抱]','[害羞]','[酷]','[嘻嘻]','[太开心]','[偷笑]','[钱]','[花心]','[挤眼]'];
+            var arr2=['zhuakuang','baobao','haixiu','ku','xixi','taikaixin','touxiao','qian','huaxin','jiyan'];
+            for (var i = 0; i < arr.length; i++) {
+                if(str.indexOf(arr[i])!=-1){
+                    str = str.replace(arr[i],'<img src="Images/phiz/'+arr2[i]+'.gif"/>')
+                    i--;
+                }
+            };
+            return str;
+        }
+    }
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <div id='top'>
+        <span id='send'></span>
+    </div>
+    <div id='main'>
+    </div>
+    
+    <div id='send-form'>
+        <p class='title'><span>许下你的愿望</span><a href="javascript:;" id='close'></a></p>
+        <form action="" name='wish'>
+            <p>
+                <label for="username">昵称：</label>
+                <input type="text" name='username' id='username'/>
+            </p>
+            <p>
+                <label for="content">愿望：(您还可以输入&nbsp;<span id='font-num'>50</span>&nbsp;个字)</label>
+                <textarea name="content" id='content'></textarea>
+                <div id='phiz'>
+                    <img src="./Images/phiz/zhuakuang.gif" alt="抓狂" />
+                    <img src="./Images/phiz/baobao.gif" alt="抱抱" />
+                    <img src="./Images/phiz/haixiu.gif" alt="害羞" />
+                    <img src="./Images/phiz/ku.gif" alt="酷" />
+                    <img src="./Images/phiz/xixi.gif" alt="嘻嘻" />
+                    <img src="./Images/phiz/taikaixin.gif" alt="太开心" />
+                    <img src="./Images/phiz/touxiao.gif" alt="偷笑" />
+                    <img src="./Images/phiz/qian.gif" alt="钱" />
+                    <img src="./Images/phiz/huaxin.gif" alt="花心" />
+                    <img src="./Images/phiz/jiyan.gif" alt="挤眼" />
+                </div>
+            </p>
+            <span id='send-btn'></span>
+        </form>
+    </div>
+</div>
+<!--[if IE 6]>
+<script type="text/javascript" src="./Js/iepng.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('#send,#close,.close','background');
+</script>
+<![endif]-->
+</body>
+</html>

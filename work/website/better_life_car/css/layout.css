@@ -1,0 +1,125 @@
+/* 精品商城 */
+.pro-list {
+  margin: 0 -9px 15px 3px;
+}
+.pro-list .pro-list-item {
+  float: left;
+  width: 212px;
+  height: 375px;
+  padding: 14px;
+  margin-right: 9px;
+  border: 1px solid #ebebeb;
+}
+/* 精品推荐 */
+.pro-recom .pro-recom-part1 {
+  width: 247px;
+  height: 380px;
+}
+.pro-recom .pro-recom-part2 {
+  padding: 0 14px;
+  width: 126px;
+  height: 378px;
+  border: 1px solid #ebebeb;
+  border-left: none;
+}
+.pro-recom .pro-recom-part3 {
+  width: 370px;
+  height: 380px;
+  border-top: 1px solid #ebebeb;
+}
+.pro-recom .pro-recom-part3 .pro-recom-part3-item {
+  float: left;
+  padding-top: 40px;
+  width: 184px;
+  height: 149px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  text-align: center;
+}
+.pro-recom .pro-recom-part4 {
+  width: 204px;
+  height: 380px;
+}
+/* 积分商城 */
+.credit-shop-list {
+  border: 1px solid #ececec;
+  border-top: none;
+}
+.credit-shop-list .credit-shop-list-item {
+  float: left;
+  height: 190px;
+  width: 192px;
+  padding: 25px 28px;
+  border-right: 1px solid #ebebeb;
+}
+.credit-shop-list .last {
+  border-right: none;
+}
+.credit-shop-ads {
+  margin-left: 2px;
+}
+.credit-shop-ads a {
+  float: left;
+}
+div.mb5 {
+  margin-bottom: 5px;
+}
+/* 企业信息 */
+.enterprise-info {
+  margin-bottom: 16px;
+}
+.enterprise-info .enterprise-info-part1 {
+  width: 218px;
+  height: 390px;
+  border-right: 1px solid #eee;
+  padding: 0 15px;
+}
+.enterprise-info .enterprise-info-part2 {
+  width: 223px;
+  height: 390px;
+  padding: 0 15px;
+  border-right: 1px solid #eee;
+}
+.enterprise-info .enterprise-info-part3 {
+  height: 390px;
+  width: 250px;
+}
+/* 服务行业 */
+.serve-industry .serve-industry-part1 {
+  height: 305px;
+  width: 223px;
+  padding: 0 13px;
+  border-right: 1px solid #ebebeb;
+}
+.serve-industry .serve-industry-part2 {
+  overflow: hidden;
+  height: 305px;
+  width: 382px;
+  padding: 0 11px;
+  border-right: 1px solid #ebebeb;
+}
+.serve-industry .serve-industry-part3 {
+  padding: 0 12px;
+}
+/* 百得利中心 */
+.better-life-center {
+  height: 280px;
+  padding-bottom: 18px;
+}
+.better-life-center .center-list .center-list-item {
+  float: left;
+  padding: 0 25px 0 27px;
+  height: 280px;
+  width: 210px;
+  border-right: 1px solid #ededed;
+}
+.better-life-center .center-list .first {
+  padding: 0 28px 0 18px;
+  width: 210px;
+}
+.better-life-center .center-list .better-life-incoming {
+  padding: 0 0 0 25px;
+  height: 280px;
+  width: 180px;
+  border: none;
+}

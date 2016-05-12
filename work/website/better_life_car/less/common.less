@@ -1,0 +1,62 @@
+/*common style*/
+.common-style(){
+	img{
+		vertical-align:top;
+		}
+	.fl{
+		float:left
+		}
+	.fr{
+		float:right
+	}
+	.clearfix:after{
+		content:'';
+		display:block;
+		clear:both
+	}
+	.clearfix{
+		zoom:1;
+		&:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+	body{
+		font-family: 'Microsoft Yahei';
+	}
+}
+.common-style;
+.wrapper{
+	width: 1000px;
+	margin: 0 auto;
+}
+.logo{
+	text-indent: -999px;
+	overflow: hidden;
+	a{
+		height: 100%;
+		display: block;
+	}
+}
+/* 页尾 */
+.footer{
+	height: 205px;
+	text-align: center;
+	background: url(../img/footer-bg.png) repeat-x;
+	.links{
+		padding-top: 64px;
+		a{
+			color: #fff;
+			padding: 0 11px;
+			border-right: 1px solid #fff;
+		}
+		.last{
+			border-right: none;
+		}
+	}
+	.copyright{
+		color: #fff;
+		padding-top: 28px;
+	}
+}
